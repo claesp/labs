@@ -24,11 +24,12 @@ func main() {
 
 	APP_CONFIG = loadConfig()
 
-	app := fiber.New(fiber.Config{})
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
+	app := fiber.New(fiber.Config{
+		AppName:               APP_NAME,
+		DisableStartupMessage: true,
 	})
+
+	app.Get("/", rootIndex)
 
 	app.Listen(fmt.Sprintf(":%d", APP_CONFIG.Port))
 }
