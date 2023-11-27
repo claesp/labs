@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html/v2"
 )
 
 var (
@@ -24,9 +25,14 @@ func main() {
 
 	APP_CONFIG = loadConfig()
 
+	engine := html.New("./views", ".html")
+	engine.Debug(true)
+
 	app := fiber.New(fiber.Config{
 		AppName:               APP_NAME,
 		DisableStartupMessage: true,
+		Views:                 engine,
+		ViewsLayout:           "layouts/main",
 	})
 
 	app.Get("/", rootIndex)
