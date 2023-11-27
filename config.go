@@ -12,7 +12,7 @@ type Config struct {
 func loadConfigDefaults() Config {
 	config := Config{}
 
-	config.Port = 8081
+	config.Port = 8080
 
 	return config
 }

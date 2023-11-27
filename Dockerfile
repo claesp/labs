@@ -9,5 +9,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /labs
 FROM scratch
 COPY --from=build /labs .
 COPY views/ /views/
-EXPOSE 8081
+EXPOSE 8080
 ENTRYPOINT [ "/labs" ]
