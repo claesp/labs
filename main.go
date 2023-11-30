@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
@@ -35,7 +36,18 @@ func main() {
 		ViewsLayout:           "layouts/main",
 	})
 
+	app.Static("/css", "./views/css", fiber.Static{
+		Compress:      true,
+		ByteRange:     true,
+		Browse:        false,
+		CacheDuration: 10 * time.Second,
+		MaxAge:        3600,
+	})
+
 	app.Get("/", rootIndex)
 
-	app.Listen(fmt.Sprintf(":%d", APP_CONFIG.Port))
+	err := app.Listen(fmt.Sprintf(":%d", APP_CONFIG.Port))
+	if err != nil {
+		log.Fatal(err)
+	}
 }
