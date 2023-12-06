@@ -4,9 +4,9 @@ COPY go.mod .
 COPY go.sum .
 COPY *.go .
 RUN go mod download
-RUN CGO_ENABLED=0 GOOS=linux go build -o /labs
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags "-s -w" -o /labs
 
-FROM scratch
+FROM --platform=amd64 scratch
 COPY --from=build /labs .
 COPY views/ /views/
 EXPOSE 8080
