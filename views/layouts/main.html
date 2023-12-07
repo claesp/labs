@@ -9,7 +9,11 @@
   </head>
 
   <body>
-    {{embed}}
+    {{template "partials/menu" .}}
+    <main>
+      {{embed}}
+      {{template "partials/footer" .}}
+    </main>
   </body>
 
 </html>
