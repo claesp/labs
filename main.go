@@ -46,6 +46,8 @@ func main() {
 
 	app.Get("/", rootIndex)
 	app.Get("/tools/", toolsIndex)
+	app.Get("/tools/for/", toolsFor)
+	app.Post("/tools/for/", toolsForExec)
 
 	err := app.Listen(fmt.Sprintf(":%d", APP_CONFIG.Port))
 	if err != nil {
