@@ -2,11 +2,11 @@
 <h1>Tools</h1>
 <hr>
 <h2>For</h2>
-<form method="post" action="/tools/for/">
+<form id="for" method="post" action="/tools/for/">
   <p>
-    <textarea name="idata" rows="20" cols="40">{{.InputData}}</textarea>
-    <textarea name="tmplt" rows="20" cols="40">{{.Template}}</textarea>
-    <textarea name="odata" rows="20" cols="40">{{.OutputData}}</textarea>
+    <textarea name="idata">{{.InputData}}</textarea>
+    <textarea name="tmplt">{{.Template}}</textarea>
+    <textarea name="odata">{{.OutputData}}</textarea>
   </p>
   <p><input type="submit" value="Go"></p>
 </form>

@@ -1,0 +1,9 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+form#for textarea {
+    width: 30%;
+    height: 20rem;
+    font-family: 'Courier New', Courier, monospace;
+}
