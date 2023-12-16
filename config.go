@@ -11,7 +11,6 @@ type Config struct {
 
 func loadConfigDefaults() Config {
 	config := Config{}
-
 	config.Port = 8080
 
 	return config
@@ -21,9 +20,9 @@ func loadConfig() Config {
 	cfg := loadConfigDefaults()
 
 	if os.Getenv("LABS_PORT") != "" {
-		port_i, port_int_err := strconv.Atoi(os.Getenv("LABS_PORT"))
-		if port_int_err == nil {
-			cfg.Port = port_i
+		portInt, portIntErr := strconv.Atoi(os.Getenv("LABS_PORT"))
+		if portIntErr == nil {
+			cfg.Port = portInt
 		}
 	}
 

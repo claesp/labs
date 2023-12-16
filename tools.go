@@ -45,7 +45,7 @@ func toolsForExec(c *fiber.Ctx) error {
 	}
 
 	return c.Render("tools-for", fiber.Map{
-		"Title":      "For | Tools | labs.cx.se",
+		"Title":      "For | Tools | labs.cx.se",
 		"InputData":  f.InputData,
 		"Template":   f.Template,
 		"OutputData": f.OutputData,
